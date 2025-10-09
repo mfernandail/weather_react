@@ -19,12 +19,28 @@ body {
 
 /* Variables CSS globales */
 :root {
-  --primary-color: #333;
-  --background-color: #fafafa;
-  --text-color: #333;
-  --border-color: #eee;
-  --error-color: #d33;
-  --success-color: #28a745;
+  /* Colores principales */
+  --color-primary: #333;
+  --color-text: #333;
+  --color-text-muted: #666;
+  --color-text-header: #d4aa02;
+  --color-text-footer: #ffffff;
+
+  
+  /* Backgrounds */
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --bg-header: #333;
+  --bg-footer: #333;
+  
+  /* Estados */
+  --color-error: #d33;
+  --color-success: #28a745;
+  
+  /* Espaciado */
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
 }
 
 /* Clases utilitarias globales */
