@@ -41,6 +41,9 @@ body {
   --spacing-sm: 10px;
   --spacing-md: 20px;
   --spacing-lg: 40px;
+
+  /* Fuentes */
+  --header-font: "Courier New", monospace;
 }
 
 /* Clases utilitarias globales */
