@@ -1,11 +1,9 @@
+import Container from './components/Container'
+
 import './styles/App.css'
 
 function App() {
-  return (
-    <>
-      <h1>Hola mundo</h1>
-    </>
-  )
+  return <Container />
 }
 
 export default App
