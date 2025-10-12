@@ -32,6 +32,9 @@ body {
   --bg-card: #ffffff;
   --bg-header: #333;
   --bg-footer: #333;
+
+  /* Buttons color */
+  --bg-btn: #667eea;
   
   /* Estados */
   --color-error: #d33;
@@ -51,11 +54,8 @@ body {
 .mt-20 { margin-top: 20px; }
 .mb-20 { margin-bottom: 20px; }
 
-/* Estilos de elementos base */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-  margin-bottom: 10px;
-}
+.mt-30 { margin-top: 20px; }
+.mb-30 { margin-bottom: 20px; }
 
 button {
   cursor: pointer;
