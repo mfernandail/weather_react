@@ -3,13 +3,13 @@ import Header from './Header'
 import SearchForm from './SearchForm'
 import WeatherDisplay from './WeatherDisplay'
 
-function Container() {
+function Container({ callApi, data }) {
   return (
     <div className="app-container">
       <Header />
       <main>
         <SearchForm />
-        <WeatherDisplay />
+        <WeatherDisplay callApi={callApi} data={data} />
       </main>
       <Footer />
     </div>
