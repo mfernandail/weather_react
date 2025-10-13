@@ -107,3 +107,8 @@ h1 {
     width: 100%;
   }
 }
+
+
+.error {
+  color: var(--color-error);
+}
