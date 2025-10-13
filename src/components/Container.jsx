@@ -3,7 +3,7 @@ import Header from './Header'
 import SearchForm from './SearchForm'
 import WeatherDisplay from './WeatherDisplay'
 
-function Container({ callApi, data, error, loading }) {
+function Container({ callApi, data, error, loading = false }) {
   return (
     <div className="app-container">
       <Header />

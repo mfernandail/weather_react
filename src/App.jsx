@@ -8,6 +8,8 @@ function App() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
+  const [unit, setUnit] = useState('°C')
+
   const callApi = async (cityName) => {
     const apiKey = import.meta.env.VITE_WEATHER_API_KEY
     const urlApi = import.meta.env.VITE_API_BASE_URL
@@ -18,7 +20,7 @@ function App() {
       )
       if (!response.ok) {
         setError(`City don't found`)
-        console.log(response)
+
         setTimeout(() => {
           setError('')
         }, 3000)
@@ -26,10 +28,8 @@ function App() {
       }
       const result = await response.json()
       setData(result)
-      console.log(result)
     } catch (error) {
       setError(error.message)
-      console.log('Error seteado!')
 
       setTimeout(() => {
         setError('')
