@@ -9,7 +9,7 @@ function Container({ callApi, data, error, loading }) {
       <Header />
       <main>
         <SearchForm callApi={callApi} error={error} loading={loading} />
-        <WeatherDisplay data={data} error={error} loading={loading} />
+        <WeatherDisplay data={data} />
       </main>
       <Footer />
     </div>

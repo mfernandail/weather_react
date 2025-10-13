@@ -9,6 +9,8 @@ function SearchForm({ callApi, error, loading }) {
     callApi(citySearchForm)
   }
 
+  // if (loading) return <p>Loading...</p>
+
   return (
     <div className="container">
       <h1>🌤️ Búsqueda de Clima</h1>
@@ -25,11 +27,12 @@ function SearchForm({ callApi, error, loading }) {
             required
           />
           <button type="submit" className="btn btn-search">
-            Buscar
+            <button type="submit" className="btn btn-search" disabled={loading}>
+              {loading ? 'Searching...' : 'Search'}
+            </button>
           </button>
         </div>
 
-        {/* 👇 Muestra el error aquí */}
         {error && <p className="error mt-20 text-center">{error}</p>}
 
         <div className="unit-toggle">
