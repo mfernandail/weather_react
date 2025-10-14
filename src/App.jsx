@@ -8,15 +8,15 @@ function App() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const [unit, setUnit] = useState('°C')
+  const [unit, setUnit] = useState('metric')
 
-  const callApi = async (cityName) => {
+  const callApi = async (cityName, unitParam = unit) => {
     const apiKey = import.meta.env.VITE_WEATHER_API_KEY
     const urlApi = import.meta.env.VITE_API_BASE_URL
     try {
       setLoading(true)
       const response = await fetch(
-        `${urlApi}q=${cityName}&units=metric&appid=${apiKey}`
+        `${urlApi}q=${cityName}&units=${unitParam}&appid=${apiKey}`
       )
       if (!response.ok) {
         setError(`City don't found`)
@@ -27,6 +27,7 @@ function App() {
         return
       }
       const result = await response.json()
+      console.log(result)
       setData(result)
     } catch (error) {
       setError(error.message)
@@ -42,7 +43,14 @@ function App() {
   }
 
   return (
-    <Container callApi={callApi} data={data} error={error} loading={loading} />
+    <Container
+      callApi={callApi}
+      data={data}
+      error={error}
+      loading={loading}
+      unit={unit}
+      setUnit={setUnit}
+    />
   )
 }
 
