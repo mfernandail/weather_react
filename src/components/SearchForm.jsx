@@ -1,16 +1,19 @@
 import { useState } from 'react'
 import '../styles/SearchForm.css'
 
-function SearchForm({ callApi, error, loading }) {
+function SearchForm({ callApi, error, loading, setUnit, unit }) {
   const [citySearchForm, setCitySearchForm] = useState('')
-  const [unit, setUnit] = useState('°C')
 
   const handleSubmitForm = (e) => {
     e.preventDefault()
-    callApi(citySearchForm)
+    callApi(citySearchForm, unit)
   }
 
-  console.log(unit)
+  const handleUnitChange = (unitText) => {
+    setUnit(unitText)
+
+    callApi(citySearchForm, unitText)
+  }
 
   return (
     <div className="container">
@@ -39,8 +42,7 @@ function SearchForm({ callApi, error, loading }) {
           <button
             type="button"
             className="btn btn-unit active"
-            value="°C"
-            onClick={(e) => setUnit(e.target.value)}
+            onClick={() => handleUnitChange('metric')}
           >
             °C
           </button>
@@ -48,7 +50,7 @@ function SearchForm({ callApi, error, loading }) {
             type="button"
             className="btn btn-unit"
             value="°F"
-            onClick={(e) => setUnit(e.target.value)}
+            onClick={() => handleUnitChange('imperial')}
           >
             °F
           </button>
