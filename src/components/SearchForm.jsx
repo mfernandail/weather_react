@@ -41,14 +41,14 @@ function SearchForm({ callApi, error, loading, setUnit, unit }) {
         <div className="unit-toggle">
           <button
             type="button"
-            className="btn btn-unit active"
+            className={`btn btn-unit ${unit === 'metric' ? 'active' : ''} `}
             onClick={() => handleUnitChange('metric')}
           >
             °C
           </button>
           <button
             type="button"
-            className="btn btn-unit"
+            className={`btn btn-unit ${unit === 'imperial' ? 'active' : ''} `}
             value="°F"
             onClick={() => handleUnitChange('imperial')}
           >
